@@ -5,6 +5,7 @@ namespace Cvoid\TestPhpTimeout\ClientBuilder;
 
 
 use Cvoid\TestPhpTimeout\Config;
+use Redis;
 
 class TestRedisBuilder
 {
@@ -12,11 +13,17 @@ class TestRedisBuilder
 
     protected $port = 6379;
 
-    protected $connectionTimeout = 2.0;
-
     protected $auth = '';
 
-    protected $readTimeout = 2.0;
+    /**
+     * @var float
+     */
+    protected $connectionTimeout = 0.0;
+
+    /**
+     * @var float
+     */
+    protected $readTimeout = 0.0;
 
     public function __construct(
         string $host,

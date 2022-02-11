@@ -12,6 +12,6 @@ Timer::tick(
     function () {
         $factory = new TestCaseFactory();
 
-        $factory->monogodb()->testExecuteLongTimeSql();
+        $factory->predis()->testLongTCPConnect();
     }
 );

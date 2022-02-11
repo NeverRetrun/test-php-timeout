@@ -18,8 +18,10 @@ class TestRedis implements TestCase
     public function testExecuteLongTimeSql(): void
     {
         $redis = TestRedisBuilder::fromNormalConfig()
+            ->setConnectionTimeout(3.0)
+            ->setReadTimeout(1.0)
             ->build();
 
-
+        $redis->wait(2, 3000);
     }
 }

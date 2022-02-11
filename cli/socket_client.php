@@ -16,9 +16,11 @@ echo "OK\nNow ready to accept connections.\nListening on the socket ... \n";
 do {
     socket_accept($sock) or die("socket_accept() failed: reason: " . socket_strerror(socket_last_error()) . "/n");
     while (1) {
+        $waitSeconds = 20;
+
         echo "Read mysql client data \n";
-        sleep(40);
-        echo "sleep 40s \n";
+        sleep($waitSeconds);
+        echo "sleep {$waitSeconds}s \n";
         exit;
     }
 } while (true);

@@ -13,6 +13,7 @@
         "ext-redis": "*",
         "ext-mongodb": "*",
         "mongodb/mongodb": "^1.11",
-        "vlucas/phpdotenv": "^5.4"
+        "vlucas/phpdotenv": "^5.4",
+        "predis/predis": "^1.1"
     }
 }
