@@ -65,8 +65,8 @@ class TestMongoDbBuilder
             "mongodb://{$host}:{$port}",
             [
                 'username' => $config->get('MONGO_USER'),
-                'password' => $config->get('MONGO_PORT'),
-                'authSource' => $config->get('MONGO_DATABASE'),
+                'password' => $config->get('MONGO_PASSWORD'),
+                'authSource' => $config->get('MONGO_AUTH_SOURCE'),
             ],
             [
                 'typeMap' => [

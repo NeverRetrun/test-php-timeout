@@ -1,5 +1,7 @@
 <?php
 
+require_once '../vendor/autoload.php';
+
 $config = \Cvoid\TestPhpTimeout\Config::instance();
 
 $address = $config->get('TCP_SERVER_IP');
