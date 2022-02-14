@@ -3,7 +3,6 @@
 
 namespace Cvoid\TestPhpTimeout\ClientBuilder;
 
-
 use Cvoid\TestPhpTimeout\Config;
 
 class TestMongoDbBuilder

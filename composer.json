@@ -1,6 +1,5 @@
 {
     "name": "cvoid/test-php-timeout",
-    "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
@@ -12,8 +11,12 @@
         "ext-pdo_mysql": "*",
         "ext-redis": "*",
         "ext-mongodb": "*",
+        "ext-json": "*",
         "mongodb/mongodb": "^1.11",
         "vlucas/phpdotenv": "^5.4",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "elasticsearch/elasticsearch": "^7",
+        "ext-pdo": "*",
+      "ext-sockets": "*"
     }
 }

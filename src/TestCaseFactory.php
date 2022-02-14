@@ -2,6 +2,7 @@
 
 namespace Cvoid\TestPhpTimeout;
 
+use Cvoid\TestPhpTimeout\TestCase\ElasticSearch\TestElasticSearch;
 use Cvoid\TestPhpTimeout\TestCase\MongoDb\TestMongodb;
 use Cvoid\TestPhpTimeout\TestCase\MySql\TestDefaultSocketTimeout;
 use Cvoid\TestPhpTimeout\TestCase\MySql\TestMysqlndConfig;
@@ -40,5 +41,10 @@ class TestCaseFactory
     public function predis(): TestCase
     {
         return new TestPRedis();
+    }
+
+    public function elasticSearch(): TestCase
+    {
+        return new TestElasticSearch();
     }
 }

@@ -12,6 +12,7 @@ class Timer
         try {
             return $callable();
         } catch (\Throwable $e) {
+            var_dump($e->getTraceAsString());
             echo "Error!: " . $e->getMessage() . PHP_EOL;
         } finally {
             $endTime = time();
