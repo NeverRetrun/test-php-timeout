@@ -22,22 +22,27 @@ class TestElasticSearch implements TestCase
     public function testExecuteLongTimeSql(): void
     {
         $client = TestElasticSearchBuilder::fromNormalConfig()
-            ->setReadTimeout(3)
+//            ->setReadTimeout(3)
             ->build();
 
         $data = TestCaseProvider::getTestJsonArray();
 
-
+        $body = [];
         for($i = 0; $i < 10000; $i++) {
-            $params['body'][] = [
+            $body[] = [
                 'index' => [
                     '_index' => 'kibana_sample_data_logs',
                 ]
             ];
 
-            $params['body'][] = $data;
+            $body[] = $data;
         }
 
-        $client->bulk($params);
+        $client->bulk([
+            'body' => $body,
+            'client' => [
+                'timeout' => 2
+            ]
+        ]);
     }
 }
