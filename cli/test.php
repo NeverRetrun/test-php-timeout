@@ -12,6 +12,6 @@ Timer::tick(
     function () {
         $factory = new TestCaseFactory();
 
-        $factory->elasticSearch()->testExecuteLongTimeSql();
+        $factory->elasticSearch()->testLongTCPConnect();
     }
 );

@@ -12,9 +12,9 @@ class TestElasticSearch implements TestCase
 {
     public function testLongTCPConnect(): void
     {
-        TestElasticSearchBuilder::fromMockConfig()
+        TestElasticSearchBuilder::fromNormalConfig()
             ->setReadTimeout(10)
-//            ->setConnectionTimeout(10)
+            ->setConnectionTimeout(3)
             ->build()
             ->ping();
     }

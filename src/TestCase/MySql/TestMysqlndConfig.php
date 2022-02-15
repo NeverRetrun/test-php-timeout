@@ -12,8 +12,8 @@ class TestMysqlndConfig implements TestCase
 {
     public function testLongTCPConnect(): void
     {
-        ini_set("mysqlnd.net_read_timeout", 1);
-        $pdo = TestPdoBuilder::fromMockConfig()->build();
+        ini_set("mysqlnd.net_read_timeout", '3');
+        $pdo = TestPdoBuilder::fromNormalConfig()->build();
         $pdo->query('SELECT 1');
     }
 

@@ -16,7 +16,7 @@ class TestPdoAttrTimeout implements TestCase
      */
     public function testLongTCPConnect(): void
     {
-        $pdo = TestPdoBuilder::fromMockConfig()->appendAttrTimeout(1)->build();
+        $pdo = TestPdoBuilder::fromNormalConfig()->appendAttrTimeout(2)->build();
         $pdo->query('SELECT 1');
     }
 

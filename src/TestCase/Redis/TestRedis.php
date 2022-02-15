@@ -9,8 +9,8 @@ class TestRedis implements TestCase
 {
     public function testLongTCPConnect(): void
     {
-        TestRedisBuilder::fromMockConfig()
-            ->setConnectionTimeout(1.0)
+        TestRedisBuilder::fromNormalConfig()
+            ->setConnectionTimeout(2.0)
             ->setReadTimeout(1.0)
             ->build();
     }

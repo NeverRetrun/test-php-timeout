@@ -12,14 +12,14 @@ class TestDefaultSocketTimeout implements TestCase
 {
     public function testLongTCPConnect(): void
     {
-        ini_set("default_socket_timeout", 1);
-        $pdo = TestPdoBuilder::fromMockConfig()->build();
+        ini_set("default_socket_timeout", '1');
+        $pdo = TestPdoBuilder::fromNormalConfig()->build();
         $pdo->query('SELECT 1');
     }
 
     public function testExecuteLongTimeSql(): void
     {
-        ini_set("default_socket_timeout", 1);
+        ini_set("default_socket_timeout", '1');
         TestPdoBuilder::fromNormalConfig()
             ->build()
             ->query(TestCaseProvider::getExecuteLongTimeSql())

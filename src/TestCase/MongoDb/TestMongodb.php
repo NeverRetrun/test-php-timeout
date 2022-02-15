@@ -11,8 +11,9 @@ class TestMongodb implements TestCase
 {
     public function testLongTCPConnect(): void
     {
-        TestMongoDbBuilder::fromMockConfig()
-            ->appendConnectTimeoutMs()
+        TestMongoDbBuilder::fromNormalConfig()
+//            ->appendConnectTimeoutMs()
+            ->appendSocketTimeoutMs()
             ->build()
             ->selectCollection('test', 'test')
             ->find(['_id' => 1]);
